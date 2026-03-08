@@ -1,21 +1,29 @@
 <!doctype html>
+<!-- 声明HTML5文档类型 -->
 <html lang="en">
 <head>
+    <!-- 页面元数据设置 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aincrad's Portfolio</title>
+    <!-- 引入Bootstrap样式 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    <!-- 连接Google字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 连接Google字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            /* 设置页面主体字体和背景色 */
             font-family: 'Inter', sans-serif;
             background-color: #1a1a2e; /* Fallback background color */
         }
 
-        /* --- Multi-Layer Parallax Setup --- */
+        /* --- 多层视差效果的通用样式 --- */
         .parallax-bg {
             position: fixed;
             left: 0;
@@ -23,32 +31,36 @@
             height: 150%;
             top: -25%;
             
+            /* 背景图填充设置 */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
             
+            /* 保持像素化效果 */
             image-rendering: -moz-crisp-edges;
             image-rendering: -webkit-crisp-edges;
             image-rendering: pixelated;
             
+            /* 提前告知浏览器会变化的属性 */
             will-change: transform, opacity;
             transition: opacity 0.4s ease-in-out;
         }
 
-        /* --- Background Set 1 --- */
+        /* --- 背景图集合1，用于初始视差层 --- */
         #back-layer { background-image: url('back.png'); z-index: -3; }
         #mid-layer { background-image: url('mid.png'); z-index: -2; }
         #front-layer { background-image: url('front.png'); z-index: -1; }
         
-        /* --- Background Set 2 --- */
+        /* --- 背景图集合2，用于滚动后展示 --- */
         #back2-layer { background-image: url('back2.png'); z-index: -7; opacity: 0; }
         #far2-layer { background-image: url('far2.png'); z-index: -6; opacity: 0; }
         #mid2-layer { background-image: url('mid2.png'); z-index: -5; opacity: 0; }
         #front2-layer { background-image: url('front2.png'); z-index: -4; opacity: 0; }
         
-        /* --- Content Styling --- */
+        /* --- 内容区样式 --- */
         .content-container { position: relative; z-index: 1; }
         .content-wrapper {
+            /* 半透明白底容器 */
             background-color: rgba(255, 255, 255, 0.6); /* ADJUSTED FOR MORE TRANSPARENCY */
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -57,11 +69,18 @@
             padding: 2rem;
         }
         .header-container {
+            /* 页面头部文字阴影和内边距 */
             padding: 3rem 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
-        .header-container h1, .header-container p { color: white; }
+        .header-container h1, .header-container p { color: black; }
         .jellyfish-avatar {
+            /* 小头像特定样式 */
             max-width: 60%;
             border-radius: 8px;
             margin-top: 1.5rem;
@@ -73,18 +92,21 @@
 </head>
 <body>
 
+    <!-- 初始视差背景图层，set1 -->
     <div id="back-layer" class="parallax-bg"></div>
     <div id="mid-layer" class="parallax-bg"></div>
     <div id="front-layer" class="parallax-bg"></div>
+    <!-- 第二个背景集合，默认透明，滚动后显示 -->
     <div id="back2-layer" class="parallax-bg"></div>
     <div id="far2-layer" class="parallax-bg"></div>
     <div id="mid2-layer" class="parallax-bg"></div>
     <div id="front2-layer" class="parallax-bg"></div>
 
     <main class="content-container">
+        <!-- 内容区域，文字头像等位于最顶部 -->
         <div class="container header-container text-center">
-            <h1 class="fw-bold display-4">This is a personal website.</h1>
-            <p class="text-light">:)</p>
+            <h1 class="fw-bold display-4">Aincrad's personal website</s></h1>
+            <span class="d-block mb-3">phone：+86 19921051975 | email：aincrad1227@outlook.com</span>
         </div>
 
         <div class="container content-wrapper">
@@ -96,10 +118,10 @@
 
                 <div class="col-md-8">
                     <div class="mb-5">
-                        <h2 class="fw-bold">Aincrad</h2>
-                        <p class="lead">Unity Game Developer, Pixel Artist, 8-bit Music Lover</p>
-                        <span class="d-block mb-1">📧 aincrad1227@email.com</span>
-                        <span class="d-block mb-2 text-muted">📞 Just guess my phone number</span>
+                        <h2 class="fw-bold">CHEN Yu</h2>
+                        <p class="text-dark">year 1 undergraduate computer engeering student in HKUST</p>
+                        <p class="text-dark">interested in games, animations and vocaloid</p>
+                        <p class="text-dark">and have the dream of making indie games</p>
                         <a href="https://github.com/Aincrad179" target="_blank" class="btn btn-dark">GitHub Profile</a>
                     </div>
                     <div class="mb-5">
@@ -110,10 +132,20 @@
                     <div class="mb-5">
                         <h2 class="fw-bold">Music</h2>
                         <p>I also greatly enjoy creating 8-bit/chiptune style music:</p>
-                        <ul class="list-group">
-                            <li class="list-group-item"><a href="https://www.bilibili.com/video/BV1vYuFzAEDe/" target="_blank">8-bit Music Track 1</a></li>
-                            <li class="list-group-item"><a href="https://www.bilibili.com/video/BV1kGNqzqEZs/" target="_blank">8-bit Music Track 2</a></li>
-                        </ul>
+                        <div class="mb-3">
+                            <p class="mb-2"><strong>朝霞与晚霞都消失不见</strong></p>
+                            <audio controls style="width: 100%;">
+                                <source src="朝霞与晚霞都消失不见.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="mb-3">
+                            <p class="mb-2"><strong>SigSig</strong></p>
+                            <audio controls style="width: 100%;">
+                                <source src="SigSig.wav"  type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,13 +155,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <script>
+        // 页面加载完后初始化视差逻辑
         document.addEventListener('DOMContentLoaded', function() {
             const layers = {
+                // 第一组视差元素
                 set1: [
                     { el: document.getElementById('back-layer'), speed: 0.2 },
                     { el: document.getElementById('mid-layer'), speed: 0.4 },
                     { el: document.getElementById('front-layer'), speed: 0.7 }
                 ],
+                // 第二组视差元素，默认透明
                 set2: [
                     { el: document.getElementById('back2-layer'), speed: 0.05 },
                     { el: document.getElementById('far2-layer'), speed: 0.25 },
@@ -138,10 +173,12 @@
                 ]
             };
 
+            // 触发转换的滚动量阈值
             const triggerPoint = 100;
             let ticking = false;
             let lastScrollY = 0;
 
+            // 更新层位置和透明度
             function updateLayers() {
                 for (const set in layers) {
                     layers[set].forEach(layer => {
@@ -151,17 +188,21 @@
                     });
                 }
 
+                // 根据滚动位置切换背景组透明度
                 if (lastScrollY > triggerPoint) {
+                    // 滚动超过阈值，隐藏set1显示set2
                     layers.set1.forEach(layer => layer.el.style.opacity = '0');
                     layers.set2.forEach(layer => layer.el.style.opacity = '1');
                 } else {
+                    // 回到顶部，恢复初始背景
                     layers.set1.forEach(layer => layer.el.style.opacity = '1');
                     layers.set2.forEach(layer => layer.el.style.opacity = '0');
                 }
 
-                ticking = false;
+                ticking = false; // 重置标志位
             }
 
+            // 监听滚动事件，使用动画帧优化性能
             window.addEventListener('scroll', function() {
                 lastScrollY = window.pageYOffset;
                 if (!ticking) {
